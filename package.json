@@ -1,0 +1,9 @@
+{
+  "name": "resume-preflight",
+  "private": true,
+  "type": "module",
+  "description": "Resume Preflight waitlist site",
+  "dependencies": {
+    "@vercel/blob": "^2.8.2"
+  }
+}

@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Resume Preflight · Check your résumé against the job before you apply</title>
+<meta name="description" content="See which job requirements your résumé actually backs up, which it only partly covers, and which it never mentions. Before you hit apply. Join the waitlist.">
+<meta name="theme-color" content="#FAFDFB" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#191C1C" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="canonical" href="https://resumepreflight.com/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://resumepreflight.com/">
+<meta property="og:title" content="Resume Preflight">
+<meta property="og:description" content="Check your résumé against the job before you hit apply. Join the waitlist.">
+<meta property="og:image" content="https://resumepreflight.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --primary:#006A62; --on-primary:#fff; --primary-container:#72F8E9; --on-primary-container:#00201D;
+  --tertiary:#47617A; --tertiary-container:#CEE5FF; --on-tertiary-container:#001D32;
+  --success:#006D3F; --success-container:#96F7B8; --on-success-container:#00210F;
+  --warning:#7A5900; --warning-container:#FFDEA2; --on-warning-container:#261900;
+  --error:#BA1A1A; --error-container:#FFDAD6; --on-error-container:#410002;
+  --bg:#FAFDFB; --on-bg:#191C1C; --on-variant:#3F4947; --outline:#6F7977; --outline-variant:#BEC9C6;
+  --c-lowest:#FFFFFF; --c-low:#F2F4F2; --c:#ECEEED; --c-high:#E6E9E7;
+  --focus:#006A62;
+  --display:"Space Grotesk",system-ui,sans-serif; --body:"Inter",system-ui,sans-serif; --mono:"DM Mono",ui-monospace,monospace;
+  --r-card:20px; --r-btn:14px; --r-input:12px;
+  --shadow:0 1px 2px rgb(0 0 0/.08),0 8px 24px rgb(0 40 36/.08);
+}
+@media (prefers-color-scheme:dark){:root{
+  --primary:#51DBCD; --on-primary:#003733; --primary-container:#00504A; --on-primary-container:#72F8E9;
+  --tertiary:#AEC9E6; --tertiary-container:#2E4961; --on-tertiary-container:#CEE5FF;
+  --success:#7ADA9E; --success-container:#00522E; --on-success-container:#96F7B8;
+  --warning:#F4BE48; --warning-container:#5C4200; --on-warning-container:#FFDEA2;
+  --error:#FFB4AB; --error-container:#93000A; --on-error-container:#FFDAD6;
+  --bg:#191C1C; --on-bg:#E0E3E1; --on-variant:#BEC9C6; --outline:#899391; --outline-variant:#3F4947;
+  --c-lowest:#0B0F0E; --c-low:#1D2020; --c:#1D2020; --c-high:#272B2A;
+  --focus:#51DBCD; --shadow:0 1px 2px rgb(0 0 0/.4),0 8px 24px rgb(0 0 0/.3);
+}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--on-bg);font:400 1.0625rem/1.6 var(--body);-webkit-font-smoothing:antialiased}
+a{color:var(--primary);text-underline-offset:3px}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px;border-radius:6px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+header{padding:28px 0}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo img{display:block;height:40px;width:auto}
+.logo .dark{display:none}
+@media (prefers-color-scheme:dark){.logo .light{display:none}.logo .dark{display:block}}
+.nav-link{font:500 .9375rem var(--body);color:var(--on-variant);text-decoration:none}
+.nav-link:hover{color:var(--primary)}
+
+/* hero */
+.hero{padding:40px 0 72px}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.eyebrow{font:500 .8125rem/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--primary);margin:0 0 20px;display:inline-flex;align-items:center;gap:10px}
+.eyebrow::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--primary);box-shadow:0 0 0 4px color-mix(in srgb,var(--primary) 20%,transparent)}
+h1{font:600 clamp(2.4rem,5.2vw,3.75rem)/1.06 var(--display);letter-spacing:-.025em;margin:0 0 20px}
+h1 em{font-style:normal;color:var(--primary)}
+.lede{font-size:1.1875rem;color:var(--on-variant);max-width:34ch;margin:0 0 32px}
+.lede strong{color:var(--on-bg);font-weight:600}
+
+form.join{display:flex;gap:10px;max-width:480px;flex-wrap:wrap}
+.join label.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.join input[type=email]{flex:1 1 240px;min-width:0;height:54px;padding:0 18px;border:1.5px solid var(--outline);border-radius:var(--r-input);background:var(--c-lowest);color:var(--on-bg);font:400 1rem var(--body)}
+.join input[type=email]::placeholder{color:var(--outline)}
+.join input[type=email]:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px color-mix(in srgb,var(--primary) 25%,transparent)}
+.join button{height:54px;padding:0 24px;border:0;border-radius:var(--r-btn);background:var(--primary);color:var(--on-primary);font:600 1rem var(--display);letter-spacing:.005em;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:transform .12s cubic-bezier(.2,0,0,1),filter .12s}
+.join button:hover{filter:brightness(1.08)}
+.join button:active{transform:translateY(1px)}
+.join button[disabled]{opacity:.6;cursor:progress}
+.hp{position:absolute;left:-9999px}
+.fine{font-size:.875rem;color:var(--on-variant);margin:12px 0 0}
+.status{margin:14px 0 0;font-weight:500;min-height:1.6em}
+.status.ok{color:var(--success)} .status.err{color:var(--error)}
+
+/* preview card */
+.preview{background:var(--c-lowest);border:1px solid var(--outline-variant);border-radius:var(--r-card);box-shadow:var(--shadow);padding:22px;position:relative}
+.preview-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding-bottom:14px;border-bottom:1px solid var(--outline-variant);margin-bottom:6px}
+.preview-head b{font:600 1rem var(--display)}
+.preview-head span{font:400 .75rem var(--mono);color:var(--on-variant)}
+.req{display:grid;grid-template-columns:1fr auto;gap:4px 12px;padding:14px 0;border-bottom:1px dashed var(--outline-variant)}
+.req:last-child{border-bottom:0;padding-bottom:2px}
+.req p{margin:0;font-weight:500;font-size:.96875rem;line-height:1.4}
+.req small{grid-column:1/-1;font:400 .78rem/1.45 var(--mono);color:var(--on-variant)}
+.chip{font:600 .72rem/1 var(--body);letter-spacing:.02em;padding:6px 10px;border-radius:999px;white-space:nowrap;align-self:start}
+.s-yes{background:var(--success-container);color:var(--on-success-container)}
+.s-part{background:var(--tertiary-container);color:var(--on-tertiary-container)}
+.s-review{background:var(--warning-container);color:var(--on-warning-container)}
+.s-no{background:var(--error-container);color:var(--on-error-container)}
+.s-int{background:var(--c-high);color:var(--on-variant)}
+.preview .tag{position:absolute;top:-12px;right:18px;font:500 .72rem/1 var(--mono);background:var(--on-bg);color:var(--bg);padding:6px 10px;border-radius:999px}
+
+/* sections */
+section{padding:72px 0}
+section.alt{background:var(--c-low)}
+h2{font:600 clamp(1.75rem,3.2vw,2.375rem)/1.15 var(--display);letter-spacing:-.02em;margin:0 0 14px;max-width:24ch}
+.sub{color:var(--on-variant);max-width:58ch;margin:0 0 40px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;counter-reset:s;list-style:none;padding:0;margin:0}
+.steps li{background:var(--c-lowest);border:1px solid var(--outline-variant);border-radius:var(--r-card);padding:24px}
+.steps li::before{counter-increment:s;content:"0" counter(s);font:500 .8125rem var(--mono);color:var(--primary);display:block;margin-bottom:14px}
+.steps h3{font:600 1.1875rem/1.3 var(--display);margin:0 0 8px}
+.steps p{margin:0;color:var(--on-variant);font-size:.98rem}
+
+.wont{display:grid;grid-template-columns:repeat(2,1fr);gap:16px 40px;list-style:none;padding:0;margin:0}
+.wont li{display:grid;grid-template-columns:28px 1fr;gap:12px;align-items:start}
+.wont li svg{margin-top:3px}
+.wont b{display:block;font:600 1.0625rem/1.35 var(--display);margin-bottom:4px}
+.wont span{color:var(--on-variant);font-size:.98rem}
+
+.note{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:start;max-width:820px}
+.note img{width:72px;height:72px;border-radius:18px;background:#fff;border:1px solid var(--outline-variant);padding:6px}
+.note blockquote{margin:0;font:400 1.3rem/1.55 var(--body)}
+.note blockquote p{margin:0 0 16px}
+.note cite{font:500 .9375rem var(--body);font-style:normal;color:var(--on-variant)}
+.note cite a{font-weight:600}
+
+.cta{text-align:center}
+.cta h2{margin:0 auto 12px}
+.cta .sub{margin:0 auto 28px}
+.cta form.join{margin:0 auto;justify-content:center}
+.cta .status{text-align:center}
+
+footer{padding:36px 0 48px;color:var(--on-variant);font-size:.875rem}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;border-top:1px solid var(--outline-variant);padding-top:24px}
+footer a{color:var(--on-variant)}
+
+@media (max-width:880px){
+  .hero .wrap{grid-template-columns:1fr;gap:44px}
+  .steps{grid-template-columns:1fr}
+  .wont{grid-template-columns:1fr}
+}
+@media (max-width:520px){
+  .wrap{padding:0 16px}
+  header{padding:20px 0}
+  .logo img{height:32px}
+  .hero{padding:20px 0 56px}
+  section{padding:56px 0}
+  .join button{width:100%;justify-content:center}
+  .note{grid-template-columns:1fr;gap:16px}
+  .note blockquote{font-size:1.15rem}
+  .preview{padding:18px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="logo" href="/" aria-label="Resume Preflight home">
+      <img class="light" src="/assets/resumepreflight-wordmark.svg" alt="Resume Preflight" width="186" height="40">
+      <img class="dark" src="/assets/resumepreflight-wordmark-dark.svg" alt="Resume Preflight" width="186" height="40">
+    </a>
+    <a class="nav-link" href="#join">Join the waitlist</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero" style="padding-top:40px">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow">Waitlist open</p>
+        <h1>Check your résumé against the job <em>before you hit apply.</em></h1>
+        <p class="lede">See which requirements your résumé actually backs up, which it only partly covers, and which it never mentions. <strong>No guessing. No black box.</strong></p>
+        <form class="join" data-source="hero" novalidate>
+          <label class="sr" for="email-hero">Email address</label>
+          <input id="email-hero" type="email" name="email" placeholder="you@email.com" autocomplete="email" required>
+          <input class="hp" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <button type="submit">Join the waitlist</button>
+        </form>
+        <p class="fine">One email when it's ready. I won't sell or share your address.</p>
+        <p class="status" role="status" aria-live="polite"></p>
+      </div>
+
+      <div class="preview" aria-label="Example of a Resume Preflight check">
+        <span class="tag">example</span>
+        <div class="preview-head"><b>Senior Product Manager</b><span>5 of 9 requirements</span></div>
+        <div class="req">
+          <p>5+ years leading cross-functional teams</p><span class="chip s-yes">Supported</span>
+          <small>Résumé line 12: "Led a 9-person team across product, engineering and data…"</small>
+        </div>
+        <div class="req">
+          <p>Experience with SQL or Python</p><span class="chip s-part">Partly supported</span>
+          <small>SQL found on line 18. Python not mentioned.</small>
+        </div>
+        <div class="req">
+          <p>Owned a product roadmap end to end</p><span class="chip s-review">Needs your review</span>
+          <small>Related: line 9 "Set quarterly priorities with leadership…" Is this it?</small>
+        </div>
+        <div class="req">
+          <p>Healthcare industry experience</p><span class="chip s-no">Not found</span>
+          <small>Nothing in your résumé mentions this.</small>
+        </div>
+        <div class="req">
+          <p>Strong communicator</p><span class="chip s-int">Assessed in interview</span>
+          <small>Not scored. You'll prove this one in the room.</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="wrap">
+      <h2>How it works</h2>
+      <p class="sub">It reads the job the way a careful recruiter would, then shows you its work.</p>
+      <ol class="steps">
+        <li><h3>Paste the job description</h3><p>It pulls out the actual requirements and sets aside the filler.</p></li>
+        <li><h3>Add your résumé</h3><p>Each requirement gets matched to the specific lines that support it, or flagged when nothing does.</p></li>
+        <li><h3>Confirm what counts</h3><p>When it finds related evidence, it suggests a match. You decide. Nothing counts until you confirm it.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>What it won't do</h2>
+      <p class="sub">Most résumé tools are built to make you feel better. This one is built to make the gap visible.</p>
+      <ul class="wont">
+        <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" style="color:var(--error)" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"/></svg><div><b>Invent experience you don't have</b><span>If your résumé doesn't say it, it won't pretend it does.</span></div></li>
+        <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" style="color:var(--error)" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"/></svg><div><b>Tell you to stuff in keywords</b><span>Matching words isn't the same as having the experience. It looks for evidence.</span></div></li>
+        <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" style="color:var(--error)" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"/></svg><div><b>Hide its reasoning</b><span>Every result points back to the line it came from, so you can check it.</span></div></li>
+        <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" style="color:var(--error)" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"/></svg><div><b>Score your personality</b><span>"Team player" and "detail-oriented" get set aside for the interview, where they belong.</span></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="wrap">
+      <div class="note">
+        <img src="/assets/resumepreflight-icon-1024.png" alt="" width="72" height="72">
+        <figure style="margin:0">
+          <blockquote>
+            <p>I built this after 164 applications and zero interviews from them. Not because my experience disappeared. Because I couldn't see how my résumé was being read.</p>
+            <p>Frankly, I don't think most people can right now. So I made the problem visible. I'm also the first user. ;)</p>
+          </blockquote>
+          <figcaption><cite>Michael Cullinan, UX designer and founder · <a href="https://www.linkedin.com/company/resumepreflight/">Follow on LinkedIn</a></cite></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta" id="join">
+    <div class="wrap">
+      <h2>Get on the list</h2>
+      <p class="sub">It's early. I'll email you once when there's something you can use.</p>
+      <form class="join" data-source="footer" novalidate>
+        <label class="sr" for="email-footer">Email address</label>
+        <input id="email-footer" type="email" name="email" placeholder="you@email.com" autocomplete="email" required>
+        <input class="hp" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button type="submit">Join the waitlist</button>
+      </form>
+      <p class="status" role="status" aria-live="polite"></p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Resume Preflight</span>
+    <span>Your email is only used to tell you when it's ready. <a href="https://www.linkedin.com/company/resumepreflight/">LinkedIn</a></span>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('form.join').forEach(function(form){
+  var status = form.parentElement.querySelector('.status');
+  var btn = form.querySelector('button');
+  var label = btn.textContent;
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+    var email = form.email.value.trim();
+    status.className = 'status';
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)){
+      status.textContent = "That email doesn't look quite right.";
+      status.classList.add('err'); form.email.focus(); return;
+    }
+    btn.disabled = true; btn.textContent = 'Joining…';
+    try{
+      var res = await fetch('/api/waitlist', {method:'POST', headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({email: email, company: form.company.value, source: form.dataset.source})});
+      var data = await res.json().catch(function(){return {};});
+      if(!res.ok) throw new Error(data.error || 'failed');
+      form.reset();
+      status.textContent = data.already ? "You're already on the list. Nice." : "You're on the list. I'll be in touch.";
+      status.classList.add('ok');
+    }catch(err){
+      status.textContent = "Something went wrong on my end. Try again in a minute?";
+      status.classList.add('err');
+    }finally{
+      btn.disabled = false; btn.textContent = label;
+    }
+  });
+});
+</script>
+</body>
+</html>
