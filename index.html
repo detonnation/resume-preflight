@@ -31,6 +31,7 @@
   --error:#BA1A1A; --error-container:#FFDAD6; --on-error-container:#410002;
   --bg:#FAFDFB; --on-bg:#191C1C; --on-variant:#3F4947; --outline:#6F7977; --outline-variant:#BEC9C6;
   --c-lowest:#FFFFFF; --c-low:#F2F4F2; --c:#ECEEED; --c-high:#E6E9E7;
+  --section-alt:#F2F4F2;
   --focus:#006A62;
   --display:"Space Grotesk",system-ui,sans-serif; --body:"Inter",system-ui,sans-serif; --mono:"DM Mono",ui-monospace,monospace;
   --r-card:20px; --r-btn:14px; --r-input:12px;
@@ -44,6 +45,7 @@
   --error:#FFB4AB; --error-container:#93000A; --on-error-container:#FFDAD6;
   --bg:#191C1C; --on-bg:#E0E3E1; --on-variant:#BEC9C6; --outline:#899391; --outline-variant:#3F4947;
   --c-lowest:#0B0F0E; --c-low:#191C1C; --c:#1D2020; --c-high:#272B2A;
+  --section-alt:#1D2020;
   --focus:#51DBCD; --shadow:0 1px 2px rgb(0 0 0/.4),0 8px 24px rgb(0 0 0/.3);
 }}
 *{box-sizing:border-box}
@@ -103,7 +105,7 @@ form.join{display:flex;gap:10px;max-width:480px;flex-wrap:wrap}
 
 /* sections */
 section{padding:72px 0}
-section.alt{background:var(--c-low)}
+section.alt{background:var(--section-alt)}
 h2{font:600 clamp(1.75rem,3.2vw,2.375rem)/1.15 var(--display);letter-spacing:-.02em;margin:0 0 14px;max-width:24ch}
 .sub{color:var(--on-variant);max-width:58ch;margin:0 0 40px}
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;counter-reset:s;list-style:none;padding:0;margin:0}
@@ -182,7 +184,7 @@ footer a{color:var(--on-variant)}
         <p class="status" role="status" aria-live="polite"></p>
       </div>
 
-      <div class="preview" aria-label="Example of a Resume Preflight check">
+      <div class="preview" role="figure" aria-label="Example of a Resume Preflight check">
         <span class="tag">example</span>
         <div class="preview-head"><b>Senior Product Manager</b><span>9 requirements reviewed</span></div>
         <div class="req">
