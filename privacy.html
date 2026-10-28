@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy · Resume Preflight</title>
+<meta name="description" content="What the Resume Preflight waitlist collects and how it's used.">
+<meta name="theme-color" content="#FAFDFB" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#191C1C" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="canonical" href="https://resumepreflight.com/privacy">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --primary:#006A62; --on-primary:#fff; --primary-container:#72F8E9; --on-primary-container:#00201D;
+  --tertiary:#47617A; --tertiary-container:#CEE5FF; --on-tertiary-container:#001D32;
+  --success:#006D3F; --success-container:#96F7B8; --on-success-container:#00210F;
+  --warning:#7A5900; --warning-container:#FFDEA2; --on-warning-container:#261900;
+  --error:#BA1A1A; --error-container:#FFDAD6; --on-error-container:#410002;
+  --bg:#FAFDFB; --on-bg:#191C1C; --on-variant:#3F4947; --outline:#6F7977; --outline-variant:#BEC9C6;
+  --c-lowest:#FFFFFF; --c-low:#F2F4F2; --c:#ECEEED; --c-high:#E6E9E7;
+  --focus:#006A62;
+  --display:"Space Grotesk",system-ui,sans-serif; --body:"Inter",system-ui,sans-serif; --mono:"DM Mono",ui-monospace,monospace;
+  --r-card:20px; --r-btn:14px; --r-input:12px;
+  --shadow:0 1px 2px rgb(0 0 0/.08),0 8px 24px rgb(0 40 36/.08);
+}
+@media (prefers-color-scheme:dark){:root{
+  --primary:#51DBCD; --on-primary:#003733; --primary-container:#00504A; --on-primary-container:#72F8E9;
+  --tertiary:#AEC9E6; --tertiary-container:#2E4961; --on-tertiary-container:#CEE5FF;
+  --success:#7ADA9E; --success-container:#00522E; --on-success-container:#96F7B8;
+  --warning:#F4BE48; --warning-container:#5C4200; --on-warning-container:#FFDEA2;
+  --error:#FFB4AB; --error-container:#93000A; --on-error-container:#FFDAD6;
+  --bg:#191C1C; --on-bg:#E0E3E1; --on-variant:#BEC9C6; --outline:#899391; --outline-variant:#3F4947;
+  --c-lowest:#0B0F0E; --c-low:#191C1C; --c:#1D2020; --c-high:#272B2A;
+  --focus:#51DBCD; --shadow:0 1px 2px rgb(0 0 0/.4),0 8px 24px rgb(0 0 0/.3);
+}}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--on-bg);font:400 1.0625rem/1.65 var(--body);-webkit-font-smoothing:antialiased}
+a{color:var(--primary);text-underline-offset:3px}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px;border-radius:6px}
+.wrap{max-width:720px;margin:0 auto;padding:0 24px}
+header{padding:28px 0}
+.logo img{display:block;height:40px;width:auto}
+.logo .dark{display:none}
+@media (prefers-color-scheme:dark){.logo .light{display:none}.logo .dark{display:block}}
+main{padding:32px 0 64px}
+.eyebrow{font:500 .8125rem/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--primary);margin:0 0 16px}
+h1{font:600 clamp(2rem,4.5vw,2.75rem)/1.1 var(--display);letter-spacing:-.02em;margin:0 0 16px}
+.lede{font-size:1.1875rem;color:var(--on-variant);margin:0 0 40px}
+h2{font:600 1.25rem/1.3 var(--display);margin:36px 0 10px}
+p,ul{margin:0 0 14px}
+ul{padding-left:1.25em}
+li{margin-bottom:6px}
+.meta{font:400 .8125rem var(--mono);color:var(--on-variant);margin-top:40px}
+footer{padding:0 0 48px;color:var(--on-variant);font-size:.875rem}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;border-top:1px solid var(--outline-variant);padding-top:24px}
+footer a{color:var(--on-variant)}
+@media (max-width:520px){.wrap{padding:0 16px}header{padding:20px 0}.logo img{height:32px}main{padding:16px 0 48px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="logo" href="/" aria-label="Resume Preflight home">
+      <img class="light" src="/assets/resumepreflight-wordmark.svg" alt="Resume Preflight" width="186" height="40">
+      <img class="dark" src="/assets/resumepreflight-wordmark-dark.svg" alt="Resume Preflight" width="186" height="40">
+    </a>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <p class="eyebrow">Privacy</p>
+    <h1>What the waitlist collects</h1>
+    <p class="lede">Right now this site does one thing: it collects email addresses for the Resume Preflight waitlist. Here's exactly what that involves.</p>
+
+    <h2>What's collected</h2>
+    <p>When you join the waitlist, the site saves:</p>
+    <ul>
+      <li>the email address you enter</li>
+      <li>the date and time you signed up</li>
+      <li>which form you used (the one at the top of the page or the one at the bottom)</li>
+      <li>the referrer: the web address your browser reports for the page the form was submitted from</li>
+    </ul>
+    <p>That's it. No résumé or job description is collected on this site.</p>
+
+    <h2>Where it's stored</h2>
+    <p>Signups are stored privately in this site's own storage on Vercel, the company that hosts the site. They aren't publicly accessible. If you sign up twice with the same address, it's saved once.</p>
+
+    <h2>How it's used</h2>
+    <p>Your address is used only to contact you about Resume Preflight: the waitlist and its launch.</p>
+
+    <h2>What doesn't happen</h2>
+    <p>Your email address is not sold, and it's not shared with anyone for advertising.</p>
+
+    <h2>Services this page relies on</h2>
+    <p>Like any website, the site is served by its host (Vercel), and fonts load from Google Fonts. Those services receive standard technical information, such as your IP address, when your browser requests the page.</p>
+
+    <h2>Questions or removal</h2>
+    <p>If you want your address removed from the waitlist or have a question, message <a href="https://www.linkedin.com/company/resume-preflight/">Resume Preflight on LinkedIn</a>.</p>
+
+    <p class="meta">Last updated October 28, 2026</p>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Resume Preflight</span>
+    <span><a href="/">Back to the waitlist</a></span>
+  </div>
+</footer>
+</body>
+</html>
